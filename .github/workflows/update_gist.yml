@@ -32,7 +32,7 @@ jobs:
     - name: Run update script
       env:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        GIST_ID: ${{ secrets.GIST_ID }}
         USERNAME: ${{ secrets.USERNAME }}
+        GIST_ID: ${{ secrets.GIST_ID }}
       run: |
         python Commit_Times.py
