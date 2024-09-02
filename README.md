@@ -20,14 +20,18 @@
 ### 3. Add Secrets to Your Repository
 1. 레포지토리의 `Settings` -> `Secrets and variables` -> `Actions`로 이동합니다.
 2. `New repository secret`을 클릭합니다.
-3. `Name` 필드에 `ACCESS_TOKEN`을 입력하고, 앞서 복사한 Personal Access Token을 붙여넣습니다.
-4. 동일한 방법으로, `Name` 필드에 `GIST_ID`를 입력하고 생성한 Gist의 ID를 붙여넣습니다.
-5. `Add secret`을 클릭하여 저장합니다.
-6. 동일한 방법으로, `Name` 필드에 `USER_NAME`을 입력하고 자신의 GitHub 사용자 이름을 붙여넣습니다.
-7. `Add secret`을 클릭하여 저장합니다.
+3. `Name` 필드에 `ACCESS_TOKEN`을 입력하고, 앞서 복사한 `Personal Access Token`을 붙여넣습니다.
+4. `Add secret`을 클릭하여 저장합니다.
+5. 동일한 방법으로, `Name` 필드에 `GIST_ID`를 입력하고 생성한 `Gist의 ID`를 붙여넣습니다.
+6. `Add secret`을 클릭하여 저장합니다.
+7. 동일한 방법으로, `Name` 필드에 `USER_NAME`을 입력하고 `자신의 GitHub 사용자 이름`을 붙여넣습니다.
+8. `Add secret`을 클릭하여 저장합니다.
 
 ### 4. 참고 문서
 - [Original Repo](https://github.com/maxam2017/productive-box)
 - [Commit 검색](https://docs.github.com/ko/search-github/searching-on-github/searching-commits)
 - [검색 랭킹](https://docs.github.com/ko/rest/search/search?apiVersion=2022-11-28#ranking-search-results)
 - [Gist 내용 업데이트](https://docs.github.com/ko/rest/reference/gists#update-a-gist-comment)
+
+## Thanks for reading!
+## Thanks for maxam2017
