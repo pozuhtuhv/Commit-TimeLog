@@ -112,9 +112,9 @@ total_commits = sum(commit_times.values())
 
 # 시간대별 심볼
 time_symbols = {
-    "Morning": "☀️",
-    "Daytime": "🌤️",
-    "Evening": "🌆",
+    "Morning": "🌞",
+    "Daytime": "🌆",
+    "Evening": "🌃",
     "Night": "🌙"
 }
 
