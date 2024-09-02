@@ -18,7 +18,7 @@ import requests
 ACCESS_TOKEN = os.getenv('ACCESS_TOKEN')  # 없을 경우 None으로 설정
 
 # Your GitHub Username
-USERNAME = os.getenv('USERNAME')
+USERNAME = os.getenv('USER_NAME')
 
 # Setting Gist ID
 SETTING_GIST_ID = os.getenv('GIST_ID')
