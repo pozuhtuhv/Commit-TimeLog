@@ -14,13 +14,13 @@ from datetime import datetime
 import requests
 
 # GitHub Personal Access Token (optional)
-ACCESS_TOKEN = os.getenv('ACCESS_TOKEN')  # 없을 경우 None으로 설정
+# ACCESS_TOKEN = os.getenv('ACCESS_TOKEN')  # 없을 경우 None으로 설정
 
 # Your GitHub Username
-USER_NAME = os.getenv('USER_NAME')
+# USER_NAME = os.getenv('USER_NAME')
 
 # Setting Gist ID
-SETTING_GIST_ID = os.getenv('GIST_ID')
+# SETTING_GIST_ID = os.getenv('GIST_ID')
 
 def get_repos(USER_NAME, ACCESS_TOKEN):
     repos = []
