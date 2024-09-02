@@ -18,21 +18,21 @@ import requests
 ACCESS_TOKEN = os.getenv('ACCESS_TOKEN')  # 없을 경우 None으로 설정
 
 # Your GitHub Username
-USERNAME = os.getenv('USER_NAME')
+USER_NAME = os.getenv('USER_NAME')
 
 # Setting Gist ID
 SETTING_GIST_ID = os.getenv('GIST_ID')
 
-def get_repos(username, access_token=None):
+def get_repos(USER_NAME, ACCESS_TOKEN):
     repos = []
     page = 1
     per_page = 100
 
     while True:
-        url = f"https://api.github.com/users/{username}/repos?per_page={per_page}&page={page}"
+        url = f"https://api.github.com/users/{USER_NAME}/repos?per_page={per_page}&page={page}"
         headers = {}
-        if access_token:
-            headers["Authorization"] = f"token {access_token}"
+        if ACCESS_TOKEN:
+            headers["Authorization"] = f"token {ACCESS_TOKEN}"
 
         response = requests.get(url, headers=headers)
 
@@ -50,7 +50,7 @@ def get_repos(username, access_token=None):
 
     return repos
 
-def get_commits(repo_full_name, access_token=None):
+def get_commits(repo_full_name, ACCESS_TOKEN):
     commits = []
     page = 1
     per_page = 100
@@ -58,8 +58,8 @@ def get_commits(repo_full_name, access_token=None):
     while True:
         url = f"https://api.github.com/repos/{repo_full_name}/commits?per_page={per_page}&page={page}"
         headers = {}
-        if access_token:
-            headers["Authorization"] = f"token {access_token}"
+        if ACCESS_TOKEN:
+            headers["Authorization"] = f"token {ACCESS_TOKEN}"
 
         response = requests.get(url, headers=headers)
 
@@ -92,7 +92,7 @@ def categorize_commit_time(commit_time):
         return "Night"
 
 # 모든 저장소 가져오기
-repos = get_repos(USERNAME, ACCESS_TOKEN)
+repos = get_repos(USER_NAME, ACCESS_TOKEN)
 
 # 모든 커밋 가져오기
 all_commits = []
