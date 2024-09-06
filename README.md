@@ -34,4 +34,3 @@
 - [Gist 내용 업데이트] : https://docs.github.com/ko/rest/reference/gists#update-a-gist-comment
 
 ## Thanks for reading!
-## Thanks for maxam2017
