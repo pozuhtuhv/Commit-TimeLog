@@ -1,7 +1,7 @@
 ## Setting up Productive Box (ver Python, GitActions)
 
 ## 0. 준비사항
-- (매우중요)이 `Repo를 Fork`를 진행한 후 `Fork된 Repo`에서 진행
+- (매우중요) `Repo를 Fork`를 진행한 후 `Fork된 Repo`에서 진행
 
 ### 1. Generate Personal Access Token
 1. GitHub에서 [Personal Access Token 생성 페이지](https://github.com/settings/tokens)로 이동합니다.
