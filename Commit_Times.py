@@ -124,7 +124,6 @@ def create_bar(count, total, length=20):  # 길이를 20으로 줄임
     return '█' * bar_length + '░' * (length - bar_length)
 
 # 결과를 Gist에 업데이트
-gist_content = "Commit Counts by Time of Day:\n"
 for time_category, count in commit_times.items():
     percentage = (count / total_commits) * 100
     symbol = time_symbols.get(time_category, "")
