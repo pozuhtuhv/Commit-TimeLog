@@ -3,10 +3,9 @@
 # Search Ranking : https://docs.github.com/ko/rest/search/search?apiVersion=2022-11-28#ranking-search-results
 # Gist Content update : https://docs.github.com/ko/rest/reference/gists#update-a-gist-comment
 # Get Generate token : https://github.com/settings/tokens -> New personal access token -> check repo and gists -> Expiration : need for you to set -> Generate token -> copy token
-# Gist : https://gist.github.com/ -> new gist -> Name : Commit_Times -> Create public gist -> copy url -> https://gist.github.com/yourname/************* <- '*************' is Gist ID
+# Gist : https://gist.github.com/ -> new gist -> Fill the Name, Content -> Create public gist -> copy url -> https://gist.github.com/yourname/************* <- '*************' is Gist ID
 # Repo Setting -> secrets and variables -> actions -> New repository secret -> Name :ACCESS_TOKEN -> paste token -> Add secret
 # Repo Setting -> secrets and variables -> actions -> New repository secret -> Name :GIST_ID -> paste Gist ID -> Add secret
-
 
 import os
 from collections import defaultdict
