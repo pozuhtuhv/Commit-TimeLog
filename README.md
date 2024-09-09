@@ -12,7 +12,7 @@
 
 ### 2. Create a Gist
 1. [Gist](https://gist.github.com/) 페이지로 이동하여 새로운 Gist를 생성합니다.
-2. `Name` 필드에 `activity times`라고 입력합니다. (내용은 상관없음)
+2. 나머지 필드을 채웁니다 (`제목, 내용 상관없음`)
 3. `Create public gist`를 클릭하여 Gist를 생성합니다. (`secret gist`가 아닌 `public gist`로 생성)
 4. 생성된 Gist URL의 ID를 복사합니다.
    - 예시: `https://gist.github.com/yourname/*************` (`*************`를 복사).
