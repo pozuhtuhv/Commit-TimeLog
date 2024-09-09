@@ -102,8 +102,8 @@ def get_latest_gist_file_name(gist_id, access_token):
     if response.status_code == 200:
         gist_data = response.json()
         files = gist_data['files']
-        # 파일 목록 중에서 최신 수정 파일 찾기
-        latest_file_name = max(files, key=lambda x: files[x]['updated_at'])
+        # 첫 번째 파일 이름 가져오기
+        latest_file_name = next(iter(files))  # 사전에서 첫 번째 파일 이름 가져오기
         return latest_file_name
     else:
         print(f"Failed to retrieve Gist: {response.status_code}")
