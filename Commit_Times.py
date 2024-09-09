@@ -138,7 +138,7 @@ headers = {
 }
 data = {
     "files": {
-        "activity time": {
+        "activity times": {
             "content": gist_content
         }
     }
