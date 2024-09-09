@@ -1,4 +1,4 @@
-## Setting up Productive Box (ver Python, GitActions)
+## Setting up Pinmycommit (ver Python, GitActions)
 
 ## 0. 준비사항
 - (매우중요) `Repo를 Fork`를 진행한 후 `Fork된 Repo`에서 진행
@@ -28,7 +28,6 @@
 8. `Add secret`을 클릭하여 저장합니다.
 
 ### 4. 참고 문서
-- [Original Repo] : https://github.com/maxam2017/productive-box
 - [Commit 검색] : https://docs.github.com/ko/search-github/searching-on-github/searching-commits
 - [검색 랭킹] : https://docs.github.com/ko/rest/search/search?apiVersion=2022-11-28#ranking-search-results
 - [Gist 내용 업데이트] : https://docs.github.com/ko/rest/reference/gists#update-a-gist-comment
