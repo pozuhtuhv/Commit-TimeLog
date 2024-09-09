@@ -1,14 +1,14 @@
 name: update_gist
 
-on:
-  schedule:
-    - cron: '0 0 * * *' # 한국시간 오전 9시에 실행
+# on:
+#   schedule:
+#     - cron: '0 0 * * *' # 한국시간 오전 9시에 실행
 
 #  이후 데이터 업데이트 필요시 cron 수정
-# on:
-#   push:
-#     branches:
-#       - main
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   build:
