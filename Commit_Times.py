@@ -10,7 +10,6 @@
 import os
 from collections import defaultdict
 from datetime import datetime
-
 import requests
 
 # GitHub Personal Access Token (optional)
@@ -90,6 +89,25 @@ def categorize_commit_time(commit_time):
     else:
         return "Night"
 
+# Gist에서 최신 파일 이름 가져오기
+def get_latest_gist_file_name(gist_id, access_token):
+    url = f"https://api.github.com/gists/{gist_id}"
+    headers = {
+        "Authorization": f"token {access_token}",
+        "Accept": "application/vnd.github.v3+json"
+    }
+    response = requests.get(url, headers=headers)
+    
+    if response.status_code == 200:
+        gist_data = response.json()
+        files = gist_data['files']
+        # 파일 목록 중에서 최신 수정 파일 찾기
+        latest_file_name = max(files, key=lambda x: files[x]['updated_at'])
+        return latest_file_name
+    else:
+        print(f"Failed to retrieve Gist: {response.status_code}")
+        return None
+
 # 모든 저장소 가져오기
 repos = get_repos(USER_NAME, ACCESS_TOKEN)
 
@@ -131,22 +149,28 @@ for time_category, count in commit_times.items():
     bar = create_bar(count, total_commits)
     gist_content += f"{symbol} {time_category:<8} {count:>4} ({percentage:>5.2f}%) {bar:>22}\n"
 
-gist_update_url = f"https://api.github.com/gists/{SETTING_GIST_ID}"
-headers = {
-    "Authorization": f"token {ACCESS_TOKEN}",
-    "Accept": "application/vnd.github.v3+json"
-}
-data = {
-    "files": {
-        "activity times": {
-            "content": gist_content
+# 최신 파일 이름 가져오기
+latest_file_name = get_latest_gist_file_name(SETTING_GIST_ID, ACCESS_TOKEN)
+
+if latest_file_name:
+    gist_update_url = f"https://api.github.com/gists/{SETTING_GIST_ID}"
+    headers = {
+        "Authorization": f"token {ACCESS_TOKEN}",
+        "Accept": "application/vnd.github.v3+json"
+    }
+    data = {
+        "files": {
+            latest_file_name: {  # 최신 파일 이름으로 업데이트
+                "content": gist_content
+            }
         }
     }
-}
 
-response = requests.patch(gist_update_url, headers=headers, json=data)
+    response = requests.patch(gist_update_url, headers=headers, json=data)
 
-if response.status_code == 200:
-    print("Gist updated successfully.")
+    if response.status_code == 200:
+        print(f"Gist '{latest_file_name}' updated successfully.")
+    else:
+        print(f"Failed to update Gist: {response.status_code}")
 else:
-    print(f"Failed to update Gist: {response.status_code}")
+    print("No file found to update.")
