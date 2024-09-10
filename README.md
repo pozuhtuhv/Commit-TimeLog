@@ -32,9 +32,9 @@
 8. Click "Add secret" to save.
 
 ### 4. Reference Documentation
-- [Commit Search]: https://docs.github.com/en/search-github/searching-on-github/searching-commits
-- [Search Ranking]: https://docs.github.com/en/rest/search/search?apiVersion=2022-11-28#ranking-search-results
-- [Update Gist Content]: https://docs.github.com/en/rest/reference/gists#update-a-gist-comment
-- [Original Repo]: https://github.com/maxam2017/productive-box
+- [Commit search] : https://docs.github.com/ko/search-github/searching-on-github/searching-commits
+- [Search Rank] : https://docs.github.com/ko/rest/search/search?apiVersion=2022-11-28#ranking-search-results
+- [Gist content update] : https://docs.github.com/ko/rest/reference/gists#update-a-gist-comment
+- [Original Repo] : https://github.com/maxam2017/productive-box
 
 ## Thanks for reading!
