@@ -1,5 +1,9 @@
 ## Setting up activity times (ver Python, GitActions)
 
+<div align='center'>
+<img src='https://raw.githubusercontent.com/pozuhtuhv/service_ACTIVITY_TIMES/main/sample.png'>
+</div>
+
 ## 0. 준비사항
 - `Repo를 Fork`를 진행한 후 `Fork된 Repo`에서 진행
 
