@@ -1,4 +1,4 @@
-## Setting up activity times (ver Python, GitActions)
+## Setting up `activity times` (ver Python, GitActions)
 
 <div align='center'>
 <img src='https://raw.githubusercontent.com/pozuhtuhv/service_ACTIVITY_TIMES/main/sample.png'>
