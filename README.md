@@ -17,7 +17,7 @@
 ### 2. Create a Gist
 1. [Gist](https://gist.github.com/) 페이지로 이동하여 새로운 Gist를 생성합니다.
 2. 나머지 필드을 채웁니다 (`제목, 내용 상관없음`)
-3. `Create public gist`를 클릭하여 Gist를 생성합니다. (`secret gist`가 아닌 `public gist`로 생성)
+3. `Create public gist`를 클릭하여 Gist를 생성합니다. (`public gist`로 생성)
 4. 생성된 Gist URL의 ID를 복사합니다.
    - 예시: `https://gist.github.com/yourname/*************` (`*************`를 복사).
 
@@ -32,9 +32,9 @@
 8. `Add secret`을 클릭하여 저장합니다.
 
 ### 4. 참고 문서
-- [Original Repo] : https://github.com/maxam2017/productive-box
 - [Commit 검색] : https://docs.github.com/ko/search-github/searching-on-github/searching-commits
 - [검색 랭킹] : https://docs.github.com/ko/rest/search/search?apiVersion=2022-11-28#ranking-search-results
 - [Gist 내용 업데이트] : https://docs.github.com/ko/rest/reference/gists#update-a-gist-comment
+- [Original Repo] : https://github.com/maxam2017/productive-box
 
 ## Thanks for reading!
