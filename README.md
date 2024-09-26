@@ -28,8 +28,6 @@
 4. Click "Add secret" to save.
 5. Similarly, create a new secret with `GIST_ID` as the Name, and paste the Gist ID.
 6. Click "Add secret" to save.
-7. Lastly, add a secret with `USER_NAME` as the Name, and input your GitHub username.
-8. Click "Add secret" to save.
 
 ### 4. Reference Documentation
 - [Commit search] : https://docs.github.com/ko/search-github/searching-on-github/searching-commits
