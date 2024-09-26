@@ -21,18 +21,15 @@ USER_NAME = os.getenv('USER_NAME')
 # Setting Gist ID
 SETTING_GIST_ID = os.getenv('GIST_ID')
 
-def get_repos(USER_NAME, ACCESS_TOKEN):
+def get_repos(USER_NAME):
     repos = []
     page = 1
     per_page = 100
 
     while True:
         url = f"https://api.github.com/users/{USER_NAME}/repos?per_page={per_page}&page={page}"
-        headers = {}
-        if ACCESS_TOKEN:
-            headers["Authorization"] = f"token {ACCESS_TOKEN}"
 
-        response = requests.get(url, headers=headers)
+        response = requests.get(url)
 
         if response.status_code != 200:
             print(f"Error: {response.status_code}")
@@ -48,18 +45,15 @@ def get_repos(USER_NAME, ACCESS_TOKEN):
 
     return repos
 
-def get_commits(repo_full_name, ACCESS_TOKEN):
+def get_commits(repo_full_name):
     commits = []
     page = 1
     per_page = 100
 
     while True:
         url = f"https://api.github.com/repos/{repo_full_name}/commits?per_page={per_page}&page={page}"
-        headers = {}
-        if ACCESS_TOKEN:
-            headers["Authorization"] = f"token {ACCESS_TOKEN}"
 
-        response = requests.get(url, headers=headers)
+        response = requests.get(url)
 
         if response.status_code != 200:
             print(f"Error: {response.status_code}")
@@ -90,13 +84,9 @@ def categorize_commit_time(commit_time):
         return "Night"
 
 # Gist에서 최신 파일 이름 가져오기
-def get_latest_gist_file_name(gist_id, access_token):
+def get_latest_gist_file_name(gist_id):
     url = f"https://api.github.com/gists/{gist_id}"
-    headers = {
-        "Authorization": f"token {access_token}",
-        "Accept": "application/vnd.github.v3+json"
-    }
-    response = requests.get(url, headers=headers)
+    response = requests.get(url)
     
     if response.status_code == 200:
         gist_data = response.json()
@@ -109,13 +99,13 @@ def get_latest_gist_file_name(gist_id, access_token):
         return None
 
 # 모든 저장소 가져오기
-repos = get_repos(USER_NAME, ACCESS_TOKEN)
+repos = get_repos(USER_NAME)
 
 # 모든 커밋 가져오기
 all_commits = []
 for repo in repos:
     repo_full_name = repo['full_name']
-    commits = get_commits(repo_full_name, ACCESS_TOKEN)
+    commits = get_commits(repo_full_name)
     all_commits.extend(commits)
 
 # 시간대별 커밋 수 집계
@@ -150,7 +140,7 @@ for time_category, count in commit_times.items():
     gist_content += f"{symbol} {time_category:<8} {count:>4} ({percentage:>5.2f}%) {bar:>22}\n"
 
 # 최신 파일 이름 가져오기
-latest_file_name = get_latest_gist_file_name(SETTING_GIST_ID, ACCESS_TOKEN)
+latest_file_name = get_latest_gist_file_name(SETTING_GIST_ID)
 
 if latest_file_name:
     gist_update_url = f"https://api.github.com/gists/{SETTING_GIST_ID}"
