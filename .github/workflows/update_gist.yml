@@ -31,7 +31,7 @@ jobs:
     - name: Run update script
       env:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        USER_NAME: ${{ secrets.USER_NAME }}
+        USER_NAME: ${{ github.actor }}
         GIST_ID: ${{ secrets.GIST_ID }}
       run: |
         python Commit_Times.py
